@@ -1,19 +1,11 @@
-import "./styles/globals.scss";
-import { Inter } from "next/font/google";
-import { Viewport, Metadata } from "next";
-import "react-toastify/dist/ReactToastify.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import ReactQueryProvider from "@/providers/ReactQueryProvider";
-import { ToastContainer } from "react-toastify";
-import Providers from "@/providers";
-
-const inter = Inter({ subsets: ["latin"] });
+import { LayoutProps } from "@/interfaces/layout_interface";
+import DashboardLayout from "@/components/layout/DashboardLayout";
+import { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "",
-    template: "%s CBS",
+    default: "Product Details",
+    template: "%s CBS | Product Details",
   },
   description:
     "Cross Border Supermarkets is expanding their business to Nigeria, to serve the African market with some significant local African partners",
@@ -28,8 +20,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Alimazoya David" }],
   openGraph: {
     title: {
-      default: "CBS",
-      template: "%s CBS",
+      default: "Product Details",
+      template: "%s CBS | Product Details",
     },
     description:
       "Cross Border Supermarkets is expanding their business to Nigeria, to serve the African market with some significant local African partners",
@@ -40,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     title: {
       default: "Cross Border Supermarkets",
-      template: "%s | CBS",
+      template: "%s CBS | Product Details",
     },
     description:
       "Cross Border Supermarkets is expanding their business to Nigeria, to serve the African market with some significant local African partners",
@@ -63,19 +55,7 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body className={`${inter.className} font-dmSans`}>
-        <ReactQueryProvider>
-          <ToastContainer bodyClassName="toast-body" />
-          <Providers>{children}</Providers>
-        </ReactQueryProvider>
-      </body>
-    </html>
-  );
-}
+const layout: React.FC<LayoutProps> = ({ children }) => {
+  return <DashboardLayout>{children}</DashboardLayout>;
+};
+export default layout;
