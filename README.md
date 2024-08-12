@@ -2,7 +2,7 @@ CBS Assessment frontend test
 
 ## Getting Started
 
-Create a .env file and add
+Create a .env file at the root of the project directory and add
 
 ```bash
 NEXT_PUBLIC_API_BASE_URL=https://fake-store-api.mock.beeceptor.com/api
@@ -19,6 +19,8 @@ pnpm dev
 # or
 bun dev
 ```
+
+The answers to the questions can be found in the root of the backend repository
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
