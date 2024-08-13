@@ -26,7 +26,9 @@ export default function Cart() {
             </div>
             <div className="grid grid-rows-1 grid-cols-2">
               <div>Total</div>
-              <div className="">${getTotalPrice(products) - 5 + 20}</div>
+              <div className="">
+                ${(getTotalPrice(products) + 20).toFixed(2)}
+              </div>
             </div>
             <div className="flex flex-row items-center justify-center">
               <Button

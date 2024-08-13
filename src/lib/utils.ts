@@ -14,6 +14,7 @@ export function getTotalPrice(products: IProduct[]): number {
   );
 }
 
+
 export function removeProductById(
   products: IProduct[],
   id: number
